@@ -1,6 +1,7 @@
 package com.example.tpcar.Dao;
 
 import com.example.tpcar.model.Car;
+import com.example.tpcar.model.Category;
 
 import java.sql.*;
 import java.time.LocalDateTime;
@@ -55,7 +56,26 @@ public class CarJdbcDao implements CarDao{
 
     @Override
     public Car findById(Integer integer) {
-        return null;
+
+        Car carFound = null;
+        Connection connection = ConnectionManager.getInstance();
+        try {
+            PreparedStatement statement = connection.prepareStatement("SELECT id,carname,description,urlimg,prix,category_id FROM cars WHERE id=?");
+            statement.setInt(1, integer);
+            ResultSet resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                String carname = resultSet.getString("carname");
+                String description = resultSet.getString("description");
+                String urlimg = resultSet.getString("urlimg");
+                double prix = resultSet.getDouble("prix");
+                int category_id = resultSet.getInt("category_id");
+                carFound = new Car(id,carname,description,urlimg,prix,category_id);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return carFound;
     }
 
     @Override

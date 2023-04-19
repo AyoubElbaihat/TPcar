@@ -27,6 +27,7 @@
                         <h5 class="card-title">${c.getCarname()}</h5>
                         <p class="card-text">${c.getPrix()}</p>
                         <a href="delete?id=${c.getId()}">Delete</a>
+                        <a href="edit-car?id=${c.getId()}">Edit</a>
                     </div>
                 </div>
             </div>

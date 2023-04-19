@@ -2,6 +2,7 @@ package com.example.tpcar.servlet;
 
 import com.example.tpcar.Dao.CarJdbcDao;
 import com.example.tpcar.model.Car;
+import com.example.tpcar.model.Category;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -18,7 +19,8 @@ public class CarListServlet extends HttpServlet {
         CarJdbcDao carJdbcDao = new CarJdbcDao();
         List<Car> carList = carJdbcDao.findAll();
 
-
+        Category category= new Category();
+        req.setAttribute("category",category);
         req.setAttribute("cars", carList);
         req
                 .getRequestDispatcher(req.getContextPath() +"/WEB-INF/list-car.jsp")

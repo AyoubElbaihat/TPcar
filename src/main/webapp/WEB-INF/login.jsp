@@ -21,7 +21,7 @@
         <div class="row justify-content-sm-center h-100">
             <div class="col-xxl-4 col-xl-5 col-lg-5 col-md-7 col-sm-9">
                 <div class="text-center my-5">
-                    <img src="https://cdn.pixabay.com/photo/2018/05/21/12/50/icon-3418201__340.png" alt="logo" width="100">
+                    <img src="https://www.sauvageboris.fr/training/javaee/carEE/resources/logo/logo_car_100.png" alt="logo" width="100">
                 </div>
                 <div class="card shadow-lg">
                     <div class="card-body p-5">

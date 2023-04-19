@@ -52,4 +52,5 @@ public class Car {
     public int getCategory_id() {
         return category_id;
     }
+
 }

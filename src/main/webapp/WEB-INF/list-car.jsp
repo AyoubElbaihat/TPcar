@@ -25,11 +25,13 @@
                     <img class="bd-placeholder-img card-img-top" width="100%" height="180" src="${c.getUrlimg()}" alt="${c.getCarname()}">
                     <div class="card-body">
                         <h5 class="card-title">${c.getCarname()}</h5>
-                        <h6 class="card-text">${c.getPrix()}</h6>
+                        <p class="card-text"> <strong>Price:</strong> ${c.getPrix()} $</p>
                         <div class="mx-auto">
-                            <a href="#" class="btn btn-primary mx-auto">Details</a>
+                            <a href="${pageContext.request.contextPath}/car-detail?id=${c.getId()}" class="btn btn-primary mx-auto">Details</a>
+                            <c:if test="${not empty sessionScope.username}">
                             <a href="${pageContext.request.contextPath}/auth/delete-car?id=${c.getId()}" class="btn btn-secondary ">Delete</a>
                             <a href="${pageContext.request.contextPath}/auth/edit-car?id=${c.getId()}" class="btn btn-secondary">Edit</a>
+                            </c:if>
                         </div>
 
                     </div>
@@ -38,6 +40,6 @@
         </c:forEach>
     </div>
 </div>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.2.0/js/bootstrap.min.js"></script>
+<c:import url="footer.jsp"></c:import>
 </body>
 </html>

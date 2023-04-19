@@ -22,12 +22,16 @@
         <c:forEach var="c" items="${cars}">
             <div class="col">
                 <div class="card">
-                    <img src="${c.getUrlimg()}" class="card-img-top" alt="${c.getCarname()}">
+                    <img class="bd-placeholder-img card-img-top" width="100%" height="180" src="${c.getUrlimg()}" alt="${c.getCarname()}">
                     <div class="card-body">
                         <h5 class="card-title">${c.getCarname()}</h5>
-                        <p class="card-text">${c.getPrix()}</p>
-                        <a href="${pageContext.request.contextPath}/auth/delete-car?id=${c.getId()}">Delete</a>
-                        <a href="${pageContext.request.contextPath}/auth/edit-car?id=${c.getId()}">Edit</a>
+                        <h6 class="card-text">${c.getPrix()}</h6>
+                        <div class="mx-auto">
+                            <a href="#" class="btn btn-primary mx-auto">Details</a>
+                            <a href="${pageContext.request.contextPath}/auth/delete-car?id=${c.getId()}" class="btn btn-secondary ">Delete</a>
+                            <a href="${pageContext.request.contextPath}/auth/edit-car?id=${c.getId()}" class="btn btn-secondary">Edit</a>
+                        </div>
+
                     </div>
                 </div>
             </div>

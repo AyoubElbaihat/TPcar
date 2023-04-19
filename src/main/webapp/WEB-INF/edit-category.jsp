@@ -17,17 +17,35 @@
 <body>
 <c:import url="header.jsp"></c:import>
 
-<form class="row g-3" method="post" action="${pageContext.request.contextPath}/auth/edit-category">
-    <div class="input-group mb-2">
-        <input type="text" class="form-control" name="catname" value="${catname}">
+<section class="h-100">
+    <div class="container h-100">
+        <div class="row justify-content-sm-center h-100">
+            <div class="col-xxl-4 col-xl-5 col-lg-5 col-md-7 col-sm-9">
+                <div class="text-center my-5">
+                    <img src="https://cdn.pixabay.com/photo/2018/05/21/12/50/icon-3418201__340.png" alt="logo" width="100">
+                </div>
+                <div class="card shadow-lg">
+                    <div class="card-body p-5">
+                        <h1 class="fs-4 card-title fw-bold mb-4">Edit Category</h1>
+                        <form method="post" action="${pageContext.request.contextPath}/auth/edit-category">
+                            <div class="mb-3">
+                                <label class="mb-2 text-muted" >Name</label>
+                                <input type="text" class="form-control" name="catname" value="${catname}">
+                            </div>
+                            <div class="input-group mb-2">
+                                <input type="hidden" class="form-control" name="id" value="${id}">
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <button type="submit" class="btn btn-primary ms-auto">
+                                    Edit Category
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="input-group mb-2">
-        <input type="hidden" class="form-control" name="id" value="${id}">
-    </div>
-    </div>
-    <div class="col-12">
-        <button type="submit" class="btn btn-primary">Edit Category</button>
-    </div>
-</form>
+</section>
 </body>
 </html>

@@ -25,6 +25,10 @@ public class Car {
         this.category_id = category_id;
     }
 
+    public Car(int id) {
+        this.id = id;
+    }
+
     public int getId() {
         return id;
     }

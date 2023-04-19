@@ -19,14 +19,12 @@
 <div class="container">
     <h1>Cars</h1>
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3 align-content-center">
-        <c:forEach var="c" items="${cars}">
+        <c:forEach var="c" items="${categorys}">
             <div class="col">
                 <div class="card">
-                    <img src="${c.getUrlimg()}" class="card-img-top" alt="${c.getCarname()}">
                     <div class="card-body">
-                        <h5 class="card-title">${c.getCarname()}</h5>
-                        <p class="card-text">${c.getPrix()}</p>
-                        <a href="delete?id=${c.getId()}">Delete</a>
+                        <h5 class="card-title">${c.getName()}</h5>
+<%--                        <p class="card-text">${c.prix}</p>--%>
                     </div>
                 </div>
             </div>

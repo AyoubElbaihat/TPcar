@@ -15,7 +15,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(urlPatterns = "/edit-category")
+@WebServlet(urlPatterns = "/auth/edit-category")
 public class EditCategoryServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -26,7 +26,7 @@ public class EditCategoryServlet extends HttpServlet {
         req.setAttribute("catname",category.getName());
 
         req
-                .getRequestDispatcher("/WEB-INF/edit-category.jsp")
+                .getRequestDispatcher(req.getContextPath() +"/WEB-INF/edit-category.jsp")
                 .forward(req, resp);
 
 
@@ -41,7 +41,7 @@ public class EditCategoryServlet extends HttpServlet {
 
         CategoryService categoryService = new CategoryService();
         categoryService.updateCategory(id,catname);
-        resp.sendRedirect("list-category");
+        resp.sendRedirect(req.getContextPath() +"/list-category");
 
     }
 }

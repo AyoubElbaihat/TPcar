@@ -10,14 +10,14 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
+                        <a class="nav-link" href="${pageContext.request.contextPath}/list-car">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Category List</a>
+                        <a class="nav-link" href="${pageContext.request.contextPath}/list-category">Category List</a>
                     </li>
                     <c:if test="${empty sessionScope.username}">
                         <li class="nav-item">
-                            <a class="nav-link" href="login">Login</a>
+                            <a class="nav-link" href="${pageContext.request.contextPath}/login">Login</a>
                         </li>
                     </c:if>
                     <c:if test="${not empty sessionScope.username}">
@@ -26,12 +26,12 @@
                                 Administration
                             </a>
                             <ul class="dropdown-menu " data-bs-popper="static">
-                                <li><a class="dropdown-item" href="#">Add Car</a></li>
-                                <li><a class="dropdown-item" href="#">Add Category</a></li>
+                                <li><a class="dropdown-item" href="${pageContext.request.contextPath}/auth/add-car">Add Car</a></li>
+                                <li><a class="dropdown-item" href="${pageContext.request.contextPath}/auth/add-category">Add Category</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="logout">Logout</a>
+                            <a class="nav-link" href="${pageContext.request.contextPath}/logout">Logout</a>
                         </li>
                     </c:if>
                 </ul>

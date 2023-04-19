@@ -17,7 +17,7 @@
 <body>
 <c:import url="header.jsp"></c:import>
 
-<form class="row g-3" method="post" action="add-category">
+<form class="row g-3" method="post" action="${pageContext.request.contextPath}/auth/add-category">
     <div class="input-group mb-2">
         <input type="text" class="form-control" name="catname" placeholder="Category Name">
     </div>

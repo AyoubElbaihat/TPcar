@@ -12,7 +12,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-@WebServlet(urlPatterns = "/delete-category")
+@WebServlet(urlPatterns = "/auth/delete-category")
 public class DeleteCategoryServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -22,6 +22,6 @@ public class DeleteCategoryServlet extends HttpServlet {
         Category category = categoryJdbcDao.findById(categorieId);
         Category categoryToDelete = category;
         categoryJdbcDao.delete(categoryToDelete);
-        resp.sendRedirect("list-category");
+        resp.sendRedirect(req.getContextPath() +"/list-category");
     }
 }

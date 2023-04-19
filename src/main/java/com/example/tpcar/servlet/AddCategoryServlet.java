@@ -13,12 +13,12 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(urlPatterns = "/add-category")
+@WebServlet(urlPatterns = "/auth/add-category")
 public class AddCategoryServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request
-                .getRequestDispatcher("/WEB-INF/add-category.jsp")
+                .getRequestDispatcher(request.getContextPath() +"/WEB-INF/add-category.jsp")
                 .forward(request, response);
     }
     @Override
@@ -28,7 +28,7 @@ public class AddCategoryServlet extends HttpServlet {
 
         CategoryService categoryService = new CategoryService();
         categoryService.createCategory(catname);
-        resp.sendRedirect("list-category");
+        resp.sendRedirect(req.getContextPath() +"/list-category");
 
     }
 }

@@ -11,7 +11,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(urlPatterns = "/delete-car")
+@WebServlet(urlPatterns = "/auth/delete-car")
 public class DeleteCarServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -20,6 +20,6 @@ public class DeleteCarServlet extends HttpServlet {
         int carId = Integer.parseInt(req.getParameter("id"));
         Car carToDelete = new Car(carId);
         carJdbcDao.delete(carToDelete);
-        resp.sendRedirect("list-car");
+        resp.sendRedirect(req.getContextPath() +"/list-car");
     }
 }

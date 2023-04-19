@@ -17,7 +17,7 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/login.jsp").forward(req, resp);
+        req.getRequestDispatcher(req.getContextPath() +"/WEB-INF/login.jsp").forward(req, resp);
     }
 
     @Override
@@ -33,7 +33,7 @@ public class LoginServlet extends HttpServlet {
             resp.sendRedirect("/list-car");
         } else {
             req.setAttribute("isError", true);
-            req.getRequestDispatcher("/WEB-INF/login.jsp").forward(req, resp);
+            req.getRequestDispatcher(req.getContextPath() +"/WEB-INF/login.jsp").forward(req, resp);
         }
     }
 }

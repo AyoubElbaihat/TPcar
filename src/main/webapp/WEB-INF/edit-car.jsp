@@ -17,7 +17,7 @@
 <body>
 <c:import url="header.jsp"></c:import>
 
-<form class="row g-3" method="post" action="edit-car">
+<form class="row g-3" method="post" action="${pageContext.request.contextPath}/auth/edit-car">
     <div class="input-group mb-2">
         <select name="catname" class="form-select">
             <option selected="">Category...</option>

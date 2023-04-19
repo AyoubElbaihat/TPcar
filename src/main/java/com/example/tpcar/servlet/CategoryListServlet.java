@@ -20,7 +20,7 @@ public class CategoryListServlet extends HttpServlet {
 
         request.setAttribute("categorys", categoryList);
         request
-                .getRequestDispatcher("/WEB-INF/list-category.jsp")
+                .getRequestDispatcher(request.getContextPath() +"/WEB-INF/list-category.jsp")
                 .forward(request, response);
     }
 }

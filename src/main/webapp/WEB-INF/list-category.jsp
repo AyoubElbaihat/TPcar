@@ -24,8 +24,8 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">${c.getName()}</h5>
-                        <a href="delete-category?id=${c.getId()}">Delete</a>
-                        <a href="edit-category?id=${c.getId()}">Edit</a>
+                        <a href="${pageContext.request.contextPath}/auth/delete-category?id=${c.getId()}">Delete</a>
+                        <a href="${pageContext.request.contextPath}/auth/edit-category?id=${c.getId()}">Edit</a>
                     </div>
                 </div>
             </div>

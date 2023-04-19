@@ -14,7 +14,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/edit-car")
+@WebServlet("/auth/edit-car")
 public class EditCarServlet extends HttpServlet {
     CarJdbcDao carJdbcDao = new CarJdbcDao();
 
@@ -34,7 +34,7 @@ public class EditCarServlet extends HttpServlet {
 
         req.setAttribute("categorys", categoryList);
         req
-                .getRequestDispatcher("/WEB-INF/edit-car.jsp")
+                .getRequestDispatcher(req.getContextPath() +"/WEB-INF/edit-car.jsp")
                 .forward(req, resp);
 
 
@@ -56,7 +56,7 @@ public class EditCarServlet extends HttpServlet {
 
         CarService carService = new CarService();
         carService.updateCar(id,carname, description, urlimg,prix,category_id);
-        resp.sendRedirect("list-car");
+        resp.sendRedirect(req.getContextPath() +"/list-car");
 
 }
 }

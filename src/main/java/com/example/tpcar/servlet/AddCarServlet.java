@@ -14,7 +14,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(urlPatterns = "/add-car")
+@WebServlet(urlPatterns = "/auth/add-car")
 public class AddCarServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -24,7 +24,7 @@ public class AddCarServlet extends HttpServlet {
 
         request.setAttribute("categorys", categoryList);
         request
-                .getRequestDispatcher("/WEB-INF/add-car.jsp")
+                .getRequestDispatcher(request.getContextPath() +"/WEB-INF/add-car.jsp")
                 .forward(request, response);
     }
     @Override
@@ -43,7 +43,7 @@ public class AddCarServlet extends HttpServlet {
 
         CarService carService = new CarService();
         carService.createCar(carname, description, urlimg,prix,category_id);
-        resp.sendRedirect("list-car");
+        resp.sendRedirect(req.getContextPath() +"/list-car");
 
     }
 }

@@ -21,7 +21,7 @@ public class CarListServlet extends HttpServlet {
 
         req.setAttribute("cars", carList);
         req
-                .getRequestDispatcher("/WEB-INF/list-car.jsp")
+                .getRequestDispatcher(req.getContextPath() +"/WEB-INF/list-car.jsp")
                 .forward(req, resp);
     }
 }

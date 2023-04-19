@@ -44,7 +44,7 @@
 
     </div>
     <div class="col-12">
-        <button type="submit" class="btn btn-primary">Add Car</button>
+        <button type="submit" class="btn btn-primary">Edit Car</button>
     </div>
 </form>
 </body>

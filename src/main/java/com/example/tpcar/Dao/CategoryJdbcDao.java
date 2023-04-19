@@ -45,7 +45,22 @@ public class CategoryJdbcDao implements CategoryDao{
 
     @Override
     public Category findById(Integer integer) {
-        return null;
+
+        Category catFound = null;
+        Connection connection = ConnectionManager.getInstance();
+        try {
+            PreparedStatement statement = connection.prepareStatement("SELECT id, catname FROM categorys WHERE id=?");
+            statement.setInt(1, integer);
+            ResultSet resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                String catname = resultSet.getString("catname");
+                catFound = new Category(id, catname);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return catFound;
     }
 
     @Override

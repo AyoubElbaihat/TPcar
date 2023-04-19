@@ -8,6 +8,7 @@ public class Category {
         this.catname = name;
     }
 
+
     public Category(int id, String name) {
         this.id = id;
         this.catname = name;

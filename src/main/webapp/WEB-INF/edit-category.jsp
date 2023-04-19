@@ -9,7 +9,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Add Category</title>
+    <title>Edit category</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -17,13 +17,16 @@
 <body>
 <c:import url="header.jsp"></c:import>
 
-<form class="row g-3" method="post" action="add-category">
+<form class="row g-3" method="post" action="edit-category">
     <div class="input-group mb-2">
-        <input type="text" class="form-control" name="catname" placeholder="Category Name">
+        <input type="text" class="form-control" name="catname" value="${catname}">
+    </div>
+    <div class="input-group mb-2">
+        <input type="hidden" class="form-control" name="id" value="${id}">
     </div>
     </div>
     <div class="col-12">
-        <button type="submit" class="btn btn-primary">Add Category</button>
+        <button type="submit" class="btn btn-primary">Edit Category</button>
     </div>
 </form>
 </body>

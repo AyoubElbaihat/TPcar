@@ -13,4 +13,10 @@ public class CategoryService {
         categoryJdbcDao.create(c);
         return c;
     }
+    public Category updateCategory(int id ,String carname) {
+        Category c = new Category(id, carname);
+
+        categoryJdbcDao.update(c);
+        return c;
+    }
 }

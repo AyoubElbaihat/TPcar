@@ -24,7 +24,8 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">${c.getName()}</h5>
-<%--                        <p class="card-text">${c.prix}</p>--%>
+                        <a href="delete-category?id=${c.getId()}">Delete</a>
+                        <a href="edit-category?id=${c.getId()}">Edit</a>
                     </div>
                 </div>
             </div>
